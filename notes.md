@@ -28,5 +28,25 @@ Hacker News is a website where links to news articles and blog posts are, well, 
 * The Post is added to the news feed.
 * The Post shows up at the top.
 * The User can subsequently Comment on the post.
+* The User can also up or down vote a Comment.
 
 A **User** can submit a **Post** and leave a **Comment** on the **Post**.
+
+Models:
+
+  * User
+    * use Devise for this!
+    * has a name
+    * has many Posts
+    * has many Comments
+  * Post
+    * has a title
+    * has a link
+    * has text(?)
+    * has many Comments
+  * Comment
+    * has text
+    * has points
+    * can also have its own Comments...recursive!
+
+Focus on getting the resources/database/API down first, and THEN worry about the views. Get a command-line version working first.
