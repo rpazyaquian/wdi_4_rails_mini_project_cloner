@@ -46,3 +46,4 @@ end
 
 gem 'foundation-rails'
 gem 'dotenv-rails'
+gem 'devise'
