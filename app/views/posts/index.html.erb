@@ -1,0 +1,6 @@
+<h1>Unhacker</h1>
+<% @posts.each do |post| %>
+  <%= link_to post.title, post.link %>
+<% end %>
+
+<%= link_to "Submit post", new_post_path %>
