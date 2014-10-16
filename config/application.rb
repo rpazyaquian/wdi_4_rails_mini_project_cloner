@@ -28,6 +28,18 @@ module MiniCloneProject
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    config.generators do |g|
+      g.test_framework :rspec,
+        :fixtures => true,  # generate fixtures using factory_girl
+        :view_specs => false,  # don't make view specs
+        :helper_specs => false,  # don't make helper specs
+        :routing_specs => false,  # don't make routing specs
+        :controller_specs => true,  # make controller specs
+        :request_specs => true  # make request specs
+      g.fixture_replacement :factory_girl,  # use factory_girl for fixtures
+        :dir => "spec/factories"  # look under spec/factories for fixtures
+    end
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
   end
