@@ -8,4 +8,8 @@ class Comment < ActiveRecord::Base
   # in which case it is a top-level comment,
   # or it is another comment,
   # in which case it is a nested comment.
+  validates :user, presence: true
+  # how am I gonna be adding a comment?
+  # something like:
+  # user.comments.create()
 end

@@ -12,4 +12,7 @@ RSpec.describe Comment, :type => :model do
   end
   it "belongs to a User"
   it "belongs to a Post"
+  it "initially has zero points" do
+    expect(FactoryGirl.build(:comment).points).to eq 0
+  end
 end
