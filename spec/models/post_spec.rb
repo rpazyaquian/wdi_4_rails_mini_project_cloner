@@ -16,4 +16,8 @@ RSpec.describe Post, :type => :model do
 
     expect(user.posts.first).to eq post
   end
+  it "is invalid without a User" do
+    post = FactoryGirl.build(:post, user_id: nil)
+    expect(post).not_to be_valid
+  end
 end

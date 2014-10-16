@@ -7,5 +7,6 @@ FactoryGirl.define do
     f.title { Faker::Name.title }
     f.link { Faker::Internet.url }
     f.text { Faker::Lorem.paragraph(3) }
+    f.user_id { Faker::Number.number(2) }
   end
 end
