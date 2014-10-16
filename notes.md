@@ -102,3 +102,4 @@ Factory files should be generated if FactoryGirl is in your gemfile, and you run
     end
 
 Faker is a gem that automates the details in a generated object.
+

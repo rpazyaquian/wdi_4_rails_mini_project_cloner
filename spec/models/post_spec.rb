@@ -10,5 +10,10 @@ RSpec.describe Post, :type => :model do
   it "is invalid without a title" do
     expect(FactoryGirl.build(:post, title: nil)).not_to be_valid
   end
-  it "belongs to a User"
+  it "belongs to a User" do
+    user = FactoryGirl.create(:user)
+    post = FactoryGirl.create(:post, user_id: user.id)
+
+    expect(user.posts.first).to eq post
+  end
 end

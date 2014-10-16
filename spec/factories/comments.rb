@@ -4,7 +4,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :comment do |f|
-    f.text { Faker::Lorem.sentences(3) }
+    f.text { Faker::Lorem.paragraph(3) }
     f.points { Faker::Number.number(2) }
   end
 end
