@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Comment, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a valid factory" do
+    expect(FactoryGirl.create(:comment)).to be_valid
+  end
+  it "is invalid without text" do
+    expect(FactoryGirl.build(:comment, text: nil)).not_to be_valid
+  end
+  it "is invalid without points" do
+    expect(FactoryGirl.build(:comment, points: nil)).not_to be_valid
+  end
 end
