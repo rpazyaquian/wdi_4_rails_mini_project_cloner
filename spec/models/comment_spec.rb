@@ -10,4 +10,6 @@ RSpec.describe Comment, :type => :model do
   it "is invalid without points" do
     expect(FactoryGirl.build(:comment, points: nil)).not_to be_valid
   end
+  it "belongs to a User"
+  it "belongs to a Post"
 end

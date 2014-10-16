@@ -79,6 +79,7 @@ Comment
   - is invalid without text
   - is invalid without a points counter
   - belongs to a User
+  - does it belong to a Post, as well?
 
 In your RSpec specifications, when you describe a step (e.g. `it "does something"`), you want to use FactoryGirl to make writing test objects (e.g. test Users, test Comments) a lot easier.
 
