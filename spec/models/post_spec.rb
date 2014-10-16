@@ -11,13 +11,13 @@ RSpec.describe Post, :type => :model do
     expect(FactoryGirl.build(:post, title: nil)).not_to be_valid
   end
   it "belongs to a User" do
+    # does this test make sense?
     user = FactoryGirl.create(:user)
-    post = FactoryGirl.create(:post, user_id: user.id)
+    post = FactoryGirl.create(:post, user: user)
 
-    expect(user.posts.first).to eq post
+    expect(post.user).to eq user
   end
   it "is invalid without a User" do
-    post = FactoryGirl.build(:post, user_id: nil)
-    expect(post).not_to be_valid
+    expect(FactoryGirl.build(:post, user_id: nil)).not_to be_valid
   end
 end
