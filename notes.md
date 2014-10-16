@@ -50,3 +50,32 @@ Models:
     * can also have its own Comments...recursive!
 
 Focus on getting the resources/database/API down first, and THEN worry about the views. Get a command-line version working first.
+
+# Testing
+
+I'm going to try and do some testing with RSpec/Factory Girl/Capybara/etc.
+
+I need to write tests for each of my Models.
+
+User
+
+  - has a valid factory
+  - is invalid without an email
+  - is invalid without a username
+  - is invalid without a password
+  - is invalid without a password confirmation
+  - is invalid without a matching password and password confirmation
+
+Post
+
+  - has a valid factory
+  - is invalid without a link
+  - is invalid without a title
+  - belongs to a User
+
+Comment
+
+  - has a valid factory
+  - is invalid without text
+  - is invalid without a points counter
+  - belongs to a User
