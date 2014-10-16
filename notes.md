@@ -79,3 +79,25 @@ Comment
   - is invalid without text
   - is invalid without a points counter
   - belongs to a User
+
+In your RSpec specifications, when you describe a step (e.g. `it "does something"`), you want to use FactoryGirl to make writing test objects (e.g. test Users, test Comments) a lot easier.
+
+    RSpec.describe User, :type => :model do
+      it "has a valid factory" do
+        expect(FactoryGirl.create(:user)).to be_valid
+      end
+      [...]
+    end
+
+Factory files should be generated if FactoryGirl is in your gemfile, and you run `rails g model Whatever` or `rails g rspec:model Whatever`, whenever specs are generated. Factory files look kinda like this:
+
+    require 'faker'
+
+    FactoryGirl.define do
+      factory :user do |f|
+        f.email { Faker::Internet.email }
+        f.password { Faker::Internet.password }
+      end
+    end
+
+Faker is a gem that automates the details in a generated object.
